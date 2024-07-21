@@ -1,10 +1,10 @@
 version: "3"
 
 services:
-  app:
-    image: ghcr.io/anas-didi95/edumgmt-server-micronaut:v0.1.0
+  edumgmt-server:
+    image: ghcr.io/anas-didi95/edumgmt-server-micronaut:dev
     command: sleep infinity
     logging:
       driver: local
     ports:
-      - "8080:8080"
+      - "9011:8080"
