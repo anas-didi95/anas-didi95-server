@@ -3,8 +3,16 @@ version: "3"
 services:
   edumgmt-server:
     image: ghcr.io/anas-didi95/edumgmt-server-micronaut:dev
-    command: sleep infinity
+    command:
+      - "-Xms64m"
+      - "-Xmx128m"
     logging:
       driver: local
-    ports:
-      - "9011:8080"
+    networks:
+      - edumgmt-server
+    env_file:
+      - ".env"
+
+networks:
+  edumgmt-server:
+    name: edumgmt-server
