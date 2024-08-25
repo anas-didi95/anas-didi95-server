@@ -9,5 +9,12 @@ providers:
     exposedByDefault: false
 
 entryPoints:
-  web:
-    address: ":80"
+  websecure:
+    address: ":443"
+
+certificatesResolvers:
+  myresolver:
+    acme:
+      tlsChallenge: {}
+      email: anas.didi95@gmail.com
+      storage: /letsencrypt/acme.json
