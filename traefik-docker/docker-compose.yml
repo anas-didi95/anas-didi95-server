@@ -3,12 +3,6 @@ version: "3"
 services:
   traefik:
     image: "traefik:v3.1.2"
-    command:
-      - "--log.level=DEBUG"
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--entryPoints.web.address=:80"
     logging:
       driver: local
     networks:
@@ -18,6 +12,7 @@ services:
       - "8080:8080"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./traefik.yml:/etc/traefik/traefik.yml:ro"
 
   #whoami:
   #  image: "traefik/whoami"
