@@ -4,3 +4,4 @@
 log/
 mongodump/
 certbot/
+h2/
