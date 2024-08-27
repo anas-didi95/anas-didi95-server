@@ -8,7 +8,7 @@ services:
     logging:
       driver: local
     networks:
-      - edumgmt-server
+      - anas-didi95-network
     ports:
       - "80:80"
       - "443:443"
@@ -30,6 +30,6 @@ services:
       - nginx
 
 networks:
-  edumgmt-server:
+  anas-didi95-network:
     external:
-      name: edumgmt-server
+      name: anas-didi95-network
