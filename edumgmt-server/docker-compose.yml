@@ -4,8 +4,8 @@ services:
   edumgmt-server:
     image: ghcr.io/anas-didi95/edumgmt-server-micronaut:dev
     command:
-      - "-Xms128m"
-      - "-Xmx256m"
+      - "-Xms64m"
+      - "-Xmx128m"
     logging:
       driver: local
     networks:
