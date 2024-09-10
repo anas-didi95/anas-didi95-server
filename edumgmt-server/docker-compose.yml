@@ -11,9 +11,9 @@ services:
     networks:
       - anas-didi95-network
     env_file:
-      - "~/anas-didi95-env/edumgmt-server.env"
+      - "~/anas-didi95-config/edumgmt-server.env"
     volumes:
-      - "./h2/:/edumgmt/h2/:rw"
+      - "~/anas-didi95-config/h2/:/edumgmt/h2/:rw"
 
 networks:
   anas-didi95-network:
