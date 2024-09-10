@@ -2,7 +2,7 @@ version: "3"
 
 services:
   edumgmt-server:
-    image: ghcr.io/anas-didi95/edumgmt-server-micronaut:dev
+    image: ghcr.io/anas-didi95/edumgmt-server-micronaut:v1.0.0
     command:
       - "-Xms64m"
       - "-Xmx128m"
