@@ -3,8 +3,19 @@ version: "3"
 services:
   edumgmt-server:
     image: ghcr.io/anas-didi95/edumgmt-server-micronaut:dev
-    command: sleep infinity
+    command:
+      - "-Xms64m"
+      - "-Xmx128m"
     logging:
       driver: local
-    ports:
-      - "9011:8080"
+    networks:
+      - anas-didi95-network
+    env_file:
+      - "~/anas-didi95-config/edumgmt-server.env"
+    volumes:
+      - "~/anas-didi95-config/h2/:/edumgmt/h2/:rw"
+
+networks:
+  anas-didi95-network:
+    external:
+      name: anas-didi95-network
