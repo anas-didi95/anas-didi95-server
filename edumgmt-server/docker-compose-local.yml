@@ -3,6 +3,8 @@ version: "3"
 services:
   edumgmt-server:
     image: ghcr.io/anas-didi95/edumgmt-server-micronaut:dev
+    labels:
+      - "traefik.http.routers.edumgmt-server.rule=PathPrefix(`/edumgmt`)"
     command:
       - "-Xms64m"
       - "-Xmx128m"

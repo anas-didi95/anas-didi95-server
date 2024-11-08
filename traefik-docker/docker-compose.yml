@@ -7,7 +7,10 @@ services:
     # Enables the web UI and tells Traefik to listen to docker
     command:
       - "--api.insecure=true"
+      - "--log.level=DEBUG"
       - "--providers.docker"
+    networks:
+      - anas-didi95-network
     ports:
       # The HTTP port
       - "80:80"
@@ -22,3 +25,8 @@ services:
     image: traefik/whoami
     labels:
       - "traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)"
+
+networks:
+  anas-didi95-network:
+    external:
+      name: anas-didi95-network
