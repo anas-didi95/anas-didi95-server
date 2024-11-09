@@ -11,6 +11,8 @@ services:
       - "traefik.http.middlewares.auth.basicauth.users=anas:$$2y$$05$$OX/Kgw6dTLZw.6GtQh2m8.sdXuRM5RW6dWfgvEgVwFgJxzUKSDcjS"
     # Enables the web UI and tells Traefik to listen to docker
     command:
+      - "--entryPoints.web.address=:80"
+      - "--entryPoints.websecure.address=:443"
       - "--api.dashboard=true"
       - "--log.level=DEBUG"
       - "--providers.docker"
@@ -20,7 +22,7 @@ services:
       # The HTTP port
       - "80:80"
       # The Web UI (enabled by --api.insecure=true)
-      - "8080:8080"
+      - "443:443"
     volumes:
       # So that Traefik can listen to the Docker events
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
