@@ -5,10 +5,10 @@ services:
     # The official v3 Traefik docker image
     image: traefik:v3.2
     labels:
-      - "traefik.http.routers.dashboard.rule=PathPrefix(`/api`) || PathPrefix(`/dashboard`)"
+      - "traefik.http.routers.dashboard.rule=Host(`localhost`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
       - "traefik.http.routers.dashboard.service=api@internal"
-      - "traefik.http.routers.dashboard.middlewares=auth"
-      - "traefik.http.middlewares.auth.basicauth.users=anas:$$2y$$05$$OX/Kgw6dTLZw.6GtQh2m8.sdXuRM5RW6dWfgvEgVwFgJxzUKSDcjS"
+      - "traefik.http.routers.dashboard.middlewares=dashboard-auth"
+      - "traefik.http.middlewares.dashboard-auth.basicauth.users=anas:$$2y$$05$$OX/Kgw6dTLZw.6GtQh2m8.sdXuRM5RW6dWfgvEgVwFgJxzUKSDcjS"
     # Enables the web UI and tells Traefik to listen to docker
     command:
       - "--entryPoints.web.address=:80"
@@ -31,7 +31,7 @@ services:
     # A container that exposes an API to show its IP address
     image: traefik/whoami
     labels:
-      - "traefik.http.routers.whoami.rule=PathPrefix(`/whoami`)"
+      - "traefik.http.routers.whoami.rule=Host(`localhost`) && PathPrefix(`/whoami`)"
     networks:
       - anas-didi95-network
 
