@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  trafik-docker:
+  traefik-docker:
     image: traefik:v3.2
     labels:
       - "traefik.http.routers.dashboard.rule=Host(`localhost`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
