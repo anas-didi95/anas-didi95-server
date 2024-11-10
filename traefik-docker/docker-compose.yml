@@ -7,7 +7,7 @@ services:
       - "traefik.http.routers.dashboard.tls.certresolver=myresolver"
       - "traefik.http.routers.dashboard.service=api@internal"
       - "traefik.http.routers.dashboard.middlewares=dashboard-auth"
-      - "traefik.http.middlewares.dashboard-auth.basicauth.users=anas:$$2y$$05$$OX/Kgw6dTLZw.6GtQh2m8.sdXuRM5RW6dWfgvEgVwFgJxzUKSDcjS"
+      - "traefik.http.middlewares.dashboard-auth.basicauth.users=traefikdashboard:$$2y$$05$$tLADq.oG5zJSLlP6LTrUi.EnDp.58PA0J9/VCk2HC8WJCWg2FApdy"
     command:
       - "--entryPoints.web.address=:80"
       - "--entryPoints.websecure.address=:443"
