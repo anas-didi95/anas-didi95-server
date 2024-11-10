@@ -5,3 +5,4 @@ log/
 mongodump/
 certbot/
 h2/
+traefik/

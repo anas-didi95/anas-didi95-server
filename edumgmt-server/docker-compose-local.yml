@@ -2,11 +2,9 @@ version: "3"
 
 services:
   edumgmt-server:
-    image: ghcr.io/anas-didi95/edumgmt-server-micronaut:v1.0.0
+    image: ghcr.io/anas-didi95/edumgmt-server-micronaut:dev
     labels:
-      - "traefik.http.routers.edumgmt-server.rule=Host(`api.anasdidi.dev`) && PathPrefix(`/edumgmt`)"
-      - "traefik.http.routers.edumgmt-server.tls=true"
-      - "traefik.http.routers.edumgmt-server.tls.certresolver=myresolver"
+      - "traefik.http.routers.edumgmt-server.rule=Host(`localhost`) && PathPrefix(`/edumgmt`)"
     command:
       - "-Xms64m"
       - "-Xmx128m"
