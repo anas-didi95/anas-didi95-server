@@ -18,6 +18,8 @@ services:
       - "--api.dashboard=true"
       - "--log.level=DEBUG"
       - "--providers.docker"
+    logging:
+      driver: local
     networks:
       - anas-didi95-network
     ports:
@@ -33,6 +35,8 @@ services:
       - "traefik.http.routers.whoami.rule=Host(`api.anasdidi.dev`) && PathPrefix(`/whoami`)"
       - "traefik.http.routers.whoami.tls=true"
       - "traefik.http.routers.whoami.tls.certresolver=myresolver"
+    logging:
+      driver: local
     networks:
       - anas-didi95-network
 

@@ -14,6 +14,8 @@ services:
       - "--api.dashboard=true"
       - "--log.level=DEBUG"
       - "--providers.docker"
+    logging:
+      driver: local
     networks:
       - anas-didi95-network
     ports:
@@ -26,6 +28,8 @@ services:
     image: traefik/whoami
     labels:
       - "traefik.http.routers.whoami.rule=Host(`localhost`) && PathPrefix(`/whoami`)"
+    logging:
+      driver: local
     networks:
       - anas-didi95-network
 
