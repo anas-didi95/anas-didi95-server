@@ -6,7 +6,7 @@ SERVICENAME=$(basename $(pwd))
 
 echo "Creating systemd service... /etc/systemd/system/${SERVICENAME}.service"
 # Create systemd service file
-sudo cat >/etc/systemd/system/$SERVICENAME.service <<EOF
+sudo cat > /etc/systemd/system/$SERVICENAME.service <<EOF
 [Unit]
 Description=$SERVICENAME
 Requires=docker.service
@@ -14,16 +14,16 @@ After=docker.service
 
 [Service]
 Restart=always
-User=root
+User=anas-didi95
 Group=docker
 TimeoutStopSec=15
 WorkingDirectory=$(pwd)
 # Shutdown container (if running) when unit is started
-ExecStartPre=$(which docker-compose) -f docker-compose.yml down
+ExecStartPre=$(which docker) compose -f docker-compose.yml down
 # Start container when unit is started
-ExecStart=$(which docker-compose) -f docker-compose.yml up
+ExecStart=$(which docker) compose -f docker-compose.yml up
 # Stop container when unit is stopped
-ExecStop=$(which docker-compose) -f docker-compose.yml down
+ExecStop=$(which docker) compose -f docker-compose.yml down
 
 [Install]
 WantedBy=multi-user.target
