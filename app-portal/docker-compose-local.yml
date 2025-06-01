@@ -1,0 +1,13 @@
+services:
+  app-portal:
+    image: ghcr.io/anas-didi95/anas-didi95-portal:develop
+    labels:
+      - "traefik.http.routers.portal.rule=Host(`localhost`) && PathPrefix(`/portalweb`)"
+    logging:
+      driver: local
+    networks:
+      - anas-didi95-network
+
+networks:
+  anas-didi95-network:
+    external: true
