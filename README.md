@@ -15,20 +15,14 @@ If using image in docker-compose, then run command to get latest image:
 docker-compose pull
 ```
 
-## edumgmt-server
-Education Management System using Micronaut.
-- [Release](https://github.com/anas-didi95/edumgmt-server-micronaut/releases/latest)
-- Current Deployment: ghcr.io/anas-didi95/edumgmt-server-micronaut:v1.0.0
+## List Of Services
 
-## nginx-certbot (_Not in used; replace with traefik-docker_)
-Nginx as reverse-proxy for applications and Certbot to automate Let's Encrypt to enable HTTPS.
-
-## traefik-docker
-Traefik as reverse-proxy and load-balancer for application, automate certificates with Let's Encrypt to enable HTTPS.
-
-### Local Development Dashboard
-1. Go to http://localhost/dashboard/
-2. Enter the credential when prompt(username/password): anas/password
+| Service | Description | Release |
+| --- | ---- | --- |
+| **app-edumgmt** | Eduction Management System using Micronaut.<br/> | https://github.com/anas-didi95/edumgmt-server-micronaut/releases/latest |
+| **app-portal** | Portal System application. | https://github.com/anas-didi95/anas-didi95-portal/releases |
+| **proxy-nginx** | Nginx as reverse-proxy and Certbot to automate Let's Encrypt to enable HTTPS.<br/>*Not in used; replace with proxy-traefik* |
+| **proxy-traefik | Traefik as reverse-proxy and load-balancer, automate certificates with Let's Encrypt to enable HTTPS. |
 
 ## Local Development
 To deploy any service for local development, ensure to run **traefik-docker** before or after service running to enable reverse-proxy.
@@ -40,3 +34,7 @@ Run the command:
 cd edumgmt-server/
 docker-compose -f docker-compose-local.yml up
 ```
+
+### Local Development Dashboard
+1. Go to http://localhost/dashboard/
+2. Enter the credential when prompt(username/password): anas/password
