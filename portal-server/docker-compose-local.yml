@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  portal-server:
+    image: ghcr.io/anas-didi95/anas-didi95-portal:develop
+    labels:
+      - "traefik.http.routers.edumgmt-server.rule=Host(`localhost`) && PathPrefix(`/portalweb`)"
+    logging:
+      driver: local
+    networks:
+      - anas-didi95-network
+
+networks:
+  anas-didi95-network:
+    external:
+      name: anas-didi95-network
