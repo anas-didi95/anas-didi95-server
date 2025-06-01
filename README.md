@@ -17,12 +17,12 @@ docker-compose pull
 
 ## List Of Services
 
-| Service | Description | Release |
-| --- | ---- | --- |
-| **app-edumgmt** | Eduction Management System using Micronaut.<br/> | https://github.com/anas-didi95/edumgmt-server-micronaut/releases/latest |
-| **app-portal** | Portal System application. | https://github.com/anas-didi95/anas-didi95-portal/releases |
-| **proxy-nginx** | Nginx as reverse-proxy and Certbot to automate Let's Encrypt to enable HTTPS.<br/>*Not in used; replace with proxy-traefik* |
-| **proxy-traefik | Traefik as reverse-proxy and load-balancer, automate certificates with Let's Encrypt to enable HTTPS. |
+| Service | Description | Release | Online |
+| --- | ---- | --- | --- |
+| **app-portal** | Portal System application. | https://github.com/anas-didi95/anas-didi95-portal/releases | :white_check_mark: |
+| **proxy-traefik** | Traefik as reverse-proxy and load-balancer, automate certificates with Let's Encrypt to enable HTTPS. | &nbsp; | :white_check_mark: |
+| **edumgmt-server** | Eduction Management System using Micronaut.<br/> | https://github.com/anas-didi95/edumgmt-server-micronaut/releases/latest | &nbsp; | &nbsp; |
+| **nginx-certbot** | Nginx as reverse-proxy and Certbot to automate Let's Encrypt to enable HTTPS.<br/>*Not in used; replace with proxy-traefik*  | &nbsp; | &nbsp; |
 
 ## Local Development
 To deploy any service for local development, ensure to run **traefik-docker** before or after service running to enable reverse-proxy.
